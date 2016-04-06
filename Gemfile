@@ -47,3 +47,5 @@ end
 
 #Gema para autenticacion de user
 gem  'devise'
+
+gem "font-awesome-rails"
