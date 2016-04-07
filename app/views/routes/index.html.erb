@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado  Rutas</h1>
+
+
+<%= link_to "Crear Ruta", new_route_path, class: "btn btn-primary btn-lg active pull-right", role: "button" %>
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th style="width: 300px;">Acciones</th>
+    <th>Nombre</th>
+    <th>Código</th>
+    <th>Descripción</th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @routes.each do |route| %>
+    <tr>
+      <td>
+          <%= link_to route, class: 'btn btn-default' do %>
+          <i class="fa fa-eye"></i>
+          Show
+          <% end %>
+
+          <%= link_to edit_route_path(route), class: 'btn btn-default' do %>
+            <i class="fa fa-pencil-square-o"></i>
+            Edit
+          <% end %>
+
+          <%= link_to route, class: 'btn btn-default',  method: :delete, data: { confirm: 'Va a eliminar información de forma irreversible... ¿Desea continuar?' }  do %>
+            <i class="fa fa-trash-o"></i>
+            Delete
+          <% end %>
+      </td>
+      <td><%= route.name %></td>
+      <td><%= route.code %></td>
+      <td><%= route.description %></td>
+    </tr>
+  <% end %>
+</tbody>
+<br>
