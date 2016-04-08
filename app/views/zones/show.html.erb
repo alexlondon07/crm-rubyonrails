@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Detalles de Zona #<%= @zone.id %></h3>
+    <h3 class="panel-title">Details#<%= @zone.id %></h3>
   </div>
   <div class="panel-body">
     <p>
-      <strong>Nombre:</strong>
+      <strong>name:</strong>
       <%= @zone.name %>
     </p>
 
     <p>
-      <strong>Código:</strong>
+      <strong>code:</strong>
       <%= @zone.code %>
     </p>
 
     <p>
-      <strong>Descripción:</strong>
+      <strong>description:</strong>
       <%= @zone.description %>
     </p>
   </div>
 </div>
 
-<%= link_to "Editar",edit_zone_path(@zone), class: "btn btn-success" %>
-<%= link_to "Atras",zones_path, class: "btn btn-info" %>
+<%= link_to "Edit",edit_zone_path(@zone), class: "btn btn-success" %>
+<%= link_to "Back",zones_path, class: "btn btn-info" %>

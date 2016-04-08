@@ -1,34 +1,38 @@
-  <%= form_for(@zone) do |f| %>
-  <% if @zone.errors.any? %>
-  <div class="alert alert-danger">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Por favor corrige los siguentes errores:</strong>
-    <ul>
-      <% @zone.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <%= form_for(@zone) do |f| %>
+    <% if @zone.errors.any? %>
+    <div class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Please correct the following errors:</strong>
+      <ul>
+        <% @zone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
 
-  <!-- Mi formulario -->
-  <div class="form-group">
-    <h4 for="">Nombre</h4>
-    <%= f.text_field :name, placeholder: "Ingrese nombre" , class: "form-control" %>
-  </div>
+    <!-- Mi formulario -->
+    <div class="form-group">
+      <h4 for="">name</h4>
+      <%= f.text_field :name, placeholder: "" , class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <h4 for="">Código</h4>
-    <%= f.text_field :code, placeholder: "Ingrese código" , class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <h4 for="">code</h4>
+      <%= f.text_field :code, placeholder: "" , class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <h4 for="">Descripción</h4>
-    <%= f.text_area :description, placeholder: "Ingrese descripción" , class: "form-control" %>
-  </div>
+    <div class="form-group">
+      <h4 for="">description</h4>
+      <%= f.text_area :description, placeholder: "" , class: "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary" %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
 
-<% end %>
+    <% end %>
+  </div>
+</form>

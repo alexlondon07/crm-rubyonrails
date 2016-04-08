@@ -2,7 +2,7 @@
   <% if @route.errors.any? %>
   <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Por favor corrige los siguentes errores:</strong>
+    <strong>Please correct the following errors:</strong>
     <ul>
       <% @route.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -13,21 +13,21 @@
 
   <!-- Mi formulario -->
   <div class="form-group">
-    <h4 for="">Nombre</h4>
-    <%= f.text_field :name, placeholder: "Ingrese nombre" , class: "form-control" %>
+    <h4 for="">name</h4>
+    <%= f.text_field :name, placeholder: "" , class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <h4 for="">Código</h4>
-    <%= f.text_field :code, placeholder: "Ingrese código" , class: "form-control" %>
+    <h4 for="">code</h4>
+    <%= f.text_field :code, placeholder: "" , class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <h4 for="">Descripción</h4>
+    <h4 for="">description</h4>
     <%= f.text_area :description, placeholder: "Ingrese descripción" , class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary" %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>
