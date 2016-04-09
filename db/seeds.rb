@@ -29,7 +29,7 @@ end
 line = Line.create(
   :name   => Faker::Name.first_name,
   :code    => Faker::Code.isbn,
-  :description  => Faker::Name.title
+  :description  => Faker::Name.title,
   :enable  => 'si'
 )
 end
