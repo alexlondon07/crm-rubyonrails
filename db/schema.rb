@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407030840) do
+ActiveRecord::Schema.define(version: 20160409024932) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code_sn"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20160407030840) do
 
   add_index "clients", ["route_id"], name: "index_clients_on_route_id"
   add_index "clients", ["zone_id"], name: "index_clients_on_zone_id"
+
+  create_table "lines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.string   "enable"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "routes", force: :cascade do |t|
     t.string   "name"

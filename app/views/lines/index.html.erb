@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lines</h1>
+<%= link_to "Create Line", new_line_path, class: "btn btn-primary btn-lg active pull-right", role: "button" %>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width: 150px;">Actions</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Enable</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lines.each do |line| %>
+      <tr>
+        <td>
+          <%= link_to line, class: 'btn btn-default', title: 'Show' do %>
+          <i class="fa fa-eye"></i>
+          <% end %>
+
+          <%= link_to edit_line_path(line), class: 'btn btn-default', title: 'Edit' do %>
+            <i class="fa fa-pencil-square-o"></i>
+          <% end %>
+
+          <%= link_to line, class: 'btn btn-default', title: 'Delete', method: :delete, data: { confirm: 'Va a eliminar información de forma irreversible... ¿Desea continuar?' }  do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+        </td>
+        <td><%= line.name %></td>
+        <td><%= line.code %></td>
+        <td><%= line.description %></td>
+        <td><%= line.enable %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

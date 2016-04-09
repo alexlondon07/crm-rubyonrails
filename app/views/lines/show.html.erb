@@ -1,0 +1,25 @@
+<h1>Show Line</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @line.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @line.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @line.description %>
+</p>
+
+<p>
+  <strong>Enable:</strong>
+  <%= @line.enable %>
+</p>
+
+<%= link_to "Edit",edit_line_path(@line), class: "btn btn-success" %>
+<%= link_to "Back",lines_path, class: "btn btn-info" %>
