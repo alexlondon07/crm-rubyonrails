@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sublines
   resources :lines
   resources :clients
   resources :routes

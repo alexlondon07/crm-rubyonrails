@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409024932) do
+ActiveRecord::Schema.define(version: 20160409205935) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code_sn"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 20160409024932) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "sublines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "line_id"
+  end
+
+  add_index "sublines", ["line_id"], name: "index_sublines_on_line_id"
 
   create_table "zones", force: :cascade do |t|
     t.string   "name"
