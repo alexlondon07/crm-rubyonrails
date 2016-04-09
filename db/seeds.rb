@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#Datos de prueba Zones
+30.times do
+zone = Zone.create(
+  :name   => Faker::Name.first_name,
+  :code    => Faker::Code.isbn,
+  :description  => Faker::Name.title
+)
+end
+
+30.times do
+route = Route.create(
+  :name   => Faker::Name.first_name,
+  :code    => Faker::Code.isbn,
+  :description  => Faker::Name.title
+)
+end
