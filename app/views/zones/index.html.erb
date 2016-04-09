@@ -7,7 +7,7 @@
   <table class="table table-striped">
   <thead>
     <tr>
-      <th style="width: 300px;">Actions</th>
+      <th style="width: 150px;">Actions</th>
       <th>Name</th>
       <th>Code</th>
       <th>Description</th>
@@ -18,19 +18,16 @@
     <% @zones.each do |zone| %>
       <tr>
         <td>
-            <%= link_to zone, class: 'btn btn-default' do %>
+            <%= link_to zone, class: 'btn btn-default', title: 'Show' do %>
             <i class="fa fa-eye"></i>
-            Show
             <% end %>
 
-            <%= link_to edit_zone_path(zone), class: 'btn btn-default' do %>
+            <%= link_to edit_zone_path(zone), class: 'btn btn-default', title: 'Edit' do %>
               <i class="fa fa-pencil-square-o"></i>
-              Edit
             <% end %>
 
-            <%= link_to zone, class: 'btn btn-default',  method: :delete, data: { confirm: 'Va a eliminar información de forma irreversible... ¿Desea continuar?' }  do %>
+            <%= link_to zone, class: 'btn btn-default', title: 'Delete', method: :delete, data: { confirm: 'Va a eliminar información de forma irreversible... ¿Desea continuar?' }  do %>
               <i class="fa fa-trash-o"></i>
-              Delete
             <% end %>
         </td>
         <td><%= zone.name %></td>
