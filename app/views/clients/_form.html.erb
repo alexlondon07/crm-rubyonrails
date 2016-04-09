@@ -1,99 +1,137 @@
-<div class="container-fluid">
-  <div class="row">
-    <%= form_for(@client) do |f| %>
-    <% if @client.errors.any? %>
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Por favor corrige los siguentes errores:</strong>
-      <ul>
-        <% @client.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
-
-      <div>
-          <div class="col-sm-6">
-            <h4 for="">Zona</h4>
-          </div>
-          <div class="col-sm-6">
-                <%= f.collection_select :zone_id, Zone.all, :id,:name, {prompt: 'Seleccione Zona', class: 'form-control'} %>
-          </div>
-      </div>
-
-
-      <!-- <div class="form-group">
-        <h4 for="">Zona</h4>
-        <%= f.collection_select :zone_id, Zone.all, :id,:name, {prompt: 'Seleccione Zona'} %>
-      </div> -->
-
-      <div class="form-group">
-        <h4 for="">Ruta</h4>
-        <%= f.collection_select :route_id, Route.all, :id,:name, {prompt: 'Seleccione Ruta'} %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Código sn</h4>
-        <%= f.text_field :code_sn, placeholder: "Ingrese código sn" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Nombre</h4>
-        <%= f.text_field :name, placeholder: "Ingrese nombre de cliente" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Razón Social</h4>
-        <%= f.text_field :code_sn, placeholder: "Ingrese razón social de la empresa" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Nit</h4>
-        <%= f.text_field :nit, placeholder: "Ingrese nit" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Dirección</h4>
-        <%= f.text_field :address, placeholder: "Ingrese Dirección" , class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <h4 for="">Ciudad</h4>
-        <%= f.text_field :city, placeholder: "Ingrese nit" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Nombre de contacto</h4>
-        <%= f.text_field :contact_name, placeholder: "Ingrese nombre de contacto" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Telefono1 de contacto</h4>
-        <%= f.text_field :contact_phone1, placeholder: "Ingrese telefono1 de contacto" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Telefono2 de contacto</h4>
-        <%= f.text_field :contact_phone2, placeholder: "Ingrese telefono2 de contacto" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Email de contacto</h4>
-        <%= f.text_field :contact_email, placeholder: "Ingrese email de contacto" , class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <h4 for="">Habilitado</h4>
-        <%= f.text_field :enable, placeholder: "" , class: "form-control" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Guardar", class: "btn btn-primary" %>
-      </div>
-
-    </div>
-
-    <% end %>
-
+<%= form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
+<% if @client.errors.any? %>
+<div class="col-lg-8 col-lg-offset-2">
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Please correct the following errors:</strong>
+    <ul>
+      <% @client.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-2">
+
+      <div class="col-sm-6">
+        <div class="form-horizontal">
+
+          <div>
+            <h3 style=''>Information to client</h3>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Zone<font color="#a94442">*</font></label>
+            <div class="col-sm-8">
+              <%= f.collection_select :zone_id, Zone.all, :id,:name, {prompt: 'Options Zone', class: 'form-control'} %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Route<font color="#a94442">*</font></label>
+            <div class="col-sm-8">
+              <%= f.collection_select :route_id, Route.all, :id,:name, {prompt: 'Options Route', class: 'form-control'} %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Code sn</label>
+            <div class="col-sm-8">
+              <%= f.text_field :code_sn, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Name<font color="#a94442">*</font></label>
+            <div class="col-sm-8">
+              <%= f.text_field :name, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Business name</label>
+            <div class="col-sm-8">
+              <%= f.text_field :business_name, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Nit</label>
+            <div class="col-sm-8">
+              <%= f.text_field :nit, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Address</label>
+            <div class="col-sm-8">
+              <%= f.text_field :address, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">City</label>
+            <div class="col-sm-8">
+              <%= f.text_field :city, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-horizontal">
+          <div>
+            <h3 style=''>Information to contact</h3>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Contact name</label>
+            <div class="col-sm-8">
+              <%= f.text_field :contact_name, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Contact phone1</label>
+            <div class="col-sm-8">
+              <%= f.text_field :contact_phone1, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Contact phone2</label>
+            <div class="col-sm-8">
+              <%= f.text_field :contact_phone2, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Contact email</label>
+            <div class="col-sm-8">
+              <%= f.text_field :contact_email, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Enable</label>
+            <div class="col-sm-8">
+              <%= f.text_field :enable, placeholder: "" , class: "form-control" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="form-horizontal">
+
+          <div class="actions">
+            <%= f.submit "Save", class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% end %>
