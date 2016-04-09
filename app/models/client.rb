@@ -7,5 +7,4 @@ class Client < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :zone_id, presence: true
   validates :route_id, presence: true
-
 end
