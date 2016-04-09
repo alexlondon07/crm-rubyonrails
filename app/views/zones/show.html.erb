@@ -1,9 +1,6 @@
+<h1>Show Zone</h1>
+
 <p id="notice"><%= notice %></p>
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Details#<%= @zone.id %></h3>
-  </div>
-  <div class="panel-body">
     <p>
       <strong>name:</strong>
       <%= @zone.name %>
@@ -18,7 +15,6 @@
       <strong>description:</strong>
       <%= @zone.description %>
     </p>
-  </div>
 </div>
 
 <%= link_to "Edit",edit_zone_path(@zone), class: "btn btn-success" %>
