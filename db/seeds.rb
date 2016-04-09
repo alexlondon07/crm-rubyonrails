@@ -15,10 +15,21 @@ zone = Zone.create(
 )
 end
 
+#Route
 30.times do
 route = Route.create(
   :name   => Faker::Name.first_name,
   :code    => Faker::Code.isbn,
   :description  => Faker::Name.title
+)
+end
+
+#Line
+30.times do
+line = Line.create(
+  :name   => Faker::Name.first_name,
+  :code    => Faker::Code.isbn,
+  :description  => Faker::Name.title
+  :enable  => 'si'
 )
 end
