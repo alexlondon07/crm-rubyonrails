@@ -1,31 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Sublines</h1>
+<%= link_to "Create Subline", new_subline_path, class: "btn btn-primary btn-lg active pull-right", role: "button" %>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th style="width: 150px;">Actions</th>
       <th>Name</th>
       <th>Code</th>
       <th>Description</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @sublines.each do |subline| %>
-      <tr>
-        <td><%= subline.name %></td>
-        <td><%= subline.code %></td>
-        <td><%= subline.description %></td>
-        <td><%= link_to 'Show', subline %></td>
-        <td><%= link_to 'Edit', edit_subline_path(subline) %></td>
-        <td><%= link_to 'Destroy', subline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td>
+        <%= link_to subline, class: 'btn btn-default', title: 'Show' do %>
+        <i class="fa fa-eye"></i>
+        <% end %>
+
+        <%= link_to edit_subline_path(subline), class: 'btn btn-default', title: 'Edit' do %>
+        <i class="fa fa-pencil-square-o"></i>
+        <% end %>
+
+        <%= link_to subline, class: 'btn btn-default', title: 'Delete', method: :delete, data: { confirm: 'Va a eliminar información de forma irreversible... ¿Desea continuar?' }  do %>
+        <i class="fa fa-trash-o"></i>
+        <% end %>
+      </td>
+      <td><%= subline.name %></td>
+      <td><%= subline.code %></td>
+      <td><%= subline.description %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Subline', new_subline_path %>

@@ -69,6 +69,6 @@ class SublinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subline_params
-      params.require(:subline).permit(:name, :code, :description)
+      params.require(:subline).permit(:line_id, :name, :code, :description)
     end
 end

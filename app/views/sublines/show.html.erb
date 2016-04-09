@@ -1,3 +1,4 @@
+<h1>Show Subline</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,5 +16,5 @@
   <%= @subline.description %>
 </p>
 
-<%= link_to 'Edit', edit_subline_path(@subline) %> |
-<%= link_to 'Back', sublines_path %>
+<%= link_to "Edit",edit_subline_path(@subline), class: "btn btn-success" %>
+<%= link_to "Back",sublines_path, class: "btn btn-info" %>
