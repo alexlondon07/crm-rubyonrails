@@ -58,3 +58,4 @@ gem  'devise'
 gem "font-awesome-rails"
 gem 'faker'
 gem 'factory_girl_rails'
+gem 'jquery-datatables-rails', '~> 3.3.0'
