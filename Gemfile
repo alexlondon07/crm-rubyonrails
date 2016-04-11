@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
@@ -53,9 +52,9 @@ group :development do
   gem 'spring'
 end
 
-#Gema para autenticacion de user
-gem  'devise'
-gem "font-awesome-rails"
+# Gema para autenticacion de user
+gem 'devise'
+gem 'font-awesome-rails'
 gem 'faker'
 gem 'factory_girl_rails'
 gem 'jquery-datatables-rails', '~> 3.3.0'

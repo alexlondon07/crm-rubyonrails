@@ -62,13 +62,14 @@ class RoutesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_route
-      @route = Route.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def route_params
-      params.require(:route).permit(:name, :code, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_route
+    @route = Route.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def route_params
+    params.require(:route).permit(:name, :code, :description)
+  end
 end

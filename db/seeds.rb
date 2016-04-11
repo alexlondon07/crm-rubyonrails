@@ -6,26 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#Zones
+# Zones
 30.times do
-zone = Zone.create(
-  :name   => Faker::Address.city,
-  :code    => Faker::Code.isbn,
-  :description  => Faker::Lorem.sentence
-)
+  zone = Zone.create(
+    name: Faker::Address.city,
+    code: Faker::Code.isbn,
+    description: Faker::Lorem.sentence
+  )
 
-#Route
-route = Route.create(
-  :name   => Faker::Address.city,
-  :code    => Faker::Code.isbn,
-  :description  => Faker::Lorem.sentence
-)
+  # Route
+  route = Route.create(
+    name: Faker::Address.city,
+    code: Faker::Code.isbn,
+    description: Faker::Lorem.sentence
+  )
 
-#Line
-line = Line.create(
-  :name   => Faker::Address.city,
-  :code    => Faker::Code.isbn,
-  :description  => Faker::Lorem.sentence,
-  :enable  => 'si'
-)
+  # Line
+  line = Line.create(
+    name: Faker::Address.city,
+    code: Faker::Code.isbn,
+    description: Faker::Lorem.sentence,
+    enable: 'si'
+  )
 end

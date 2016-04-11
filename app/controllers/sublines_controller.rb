@@ -62,13 +62,14 @@ class SublinesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subline
-      @subline = Subline.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def subline_params
-      params.require(:subline).permit(:line_id, :name, :code, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_subline
+    @subline = Subline.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def subline_params
+    params.require(:subline).permit(:line_id, :name, :code, :description)
+  end
 end
