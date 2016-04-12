@@ -11,61 +11,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_409_205_935) do
-  create_table 'clients', force: :cascade do |t|
-    t.string   'code_sn'
-    t.string   'name'
-    t.string   'business_name'
-    t.string   'nit'
-    t.string   'address'
-    t.string   'city'
-    t.string   'contact_name'
-    t.string   'contact_phone1'
-    t.string   'contact_phone2'
-    t.string   'contact_email'
-    t.string   'enable'
-    t.datetime 'created_at',     null: false
-    t.datetime 'updated_at',     null: false
-    t.integer  'zone_id'
-    t.integer  'route_id'
+ActiveRecord::Schema.define(version: 20160412133647) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "code_sn"
+    t.string   "name"
+    t.string   "business_name"
+    t.string   "nit"
+    t.string   "address"
+    t.string   "city"
+    t.string   "contact_name"
+    t.string   "contact_phone1"
+    t.string   "contact_phone2"
+    t.string   "contact_email"
+    t.string   "enable"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "zone_id"
+    t.integer  "route_id"
   end
 
-  add_index 'clients', ['route_id'], name: 'index_clients_on_route_id'
-  add_index 'clients', ['zone_id'], name: 'index_clients_on_zone_id'
+  add_index "clients", ["route_id"], name: "index_clients_on_route_id"
+  add_index "clients", ["zone_id"], name: "index_clients_on_zone_id"
 
-  create_table 'lines', force: :cascade do |t|
-    t.string   'name'
-    t.string   'code'
-    t.string   'description'
-    t.string   'enable'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+  create_table "lines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.string   "enable"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table 'routes', force: :cascade do |t|
-    t.string   'name'
-    t.string   'code'
-    t.string   'description'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+  create_table "routes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table 'sublines', force: :cascade do |t|
-    t.string   'name'
-    t.string   'code'
-    t.string   'description'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
-    t.integer  'line_id'
+  create_table "sublines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "line_id"
   end
 
-  add_index 'sublines', ['line_id'], name: 'index_sublines_on_line_id'
+  add_index "sublines", ["line_id"], name: "index_sublines_on_line_id"
 
-  create_table 'zones', force: :cascade do |t|
-    t.string   'name'
-    t.string   'code'
-    t.string   'description'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+  create_table "users", force: :cascade do |t|
+    t.boolean  "admin"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "zones", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
 end
