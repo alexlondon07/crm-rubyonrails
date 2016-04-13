@@ -5,6 +5,15 @@ config.authorize_with do
    redirect_to main_app.root_path unless current_user.admin==true
  end
 
+ ################  Global configuration  ################
+
+  # Set the admin name here (optional second array element will appear in red). For example:
+  config.main_app_name = ['Rails4 Rails Admin CRM', 'Leraning']
+
+
+  # RailsAdmin may need a way to know who the current user is]
+  config.current_user_method { current_user } # auto-generated
+
   ### Popular gems integration
 
   ## == Devise ==

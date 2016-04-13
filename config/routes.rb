@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  resources :sublines
-  resources :lines
-  resources :clients
-  resources :routes
-  resources :zones
+
+  # namespace :admin do resources :lines end
+  # namespace :admin do resources :clients end
+  # namespace :admin do resources :routes end
+  # namespace :admin do resources :zones end
+
+
+  namespace :admin do
+    resources :lines
+    resources :clients
+    resources :routes
+    resources :zones
+  end
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
