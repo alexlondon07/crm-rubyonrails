@@ -29,3 +29,10 @@
     enable: 'si'
   )
 end
+
+# User
+user = User.create(
+  email: 'admin@admin.com',
+  encrypted_password: 'admin12345',
+  admin: 't'
+)
