@@ -29,13 +29,29 @@
     enable: 'si'
   )
 
+  # SubLine
+  subline = Subline.create(
+    name: Faker::Address.city,
+    code: Faker::Code.isbn,
+    description: Faker::Lorem.sentence,
+    line_id: '1'
+  )
+
   # Clients
   client = Client.create(
     code_sn: Faker::Address.city,
     name: Faker::Address.city,
     business_name: Faker::Code.isbn,
     address: Faker::Address.city,
-    enable: 'si'
+    zone_id: '1',
+    route_id: '1'
+  )
+
+  # Products
+  product = Product.create(
+    name: Faker::Address.city,
+    reference: Faker::Code.isbn,
+    subline_id: '1'
   )
 end
 
@@ -43,5 +59,5 @@ end
 user = User.create(
   email: 'admin@admin.com',
   encrypted_password: 'admin12345',
-  admin: 'true'
+  admin: 't'
 )
