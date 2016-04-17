@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   # namespace :admin do resources :routes end
   # namespace :admin do resources :zones end
 
-
   namespace :admin do
     resources :lines
     resources :clients
     resources :routes
     resources :zones
+    resources :products
   end
 
   get 'welcome/index'

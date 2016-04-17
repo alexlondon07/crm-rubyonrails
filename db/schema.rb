@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412133647) do
+ActiveRecord::Schema.define(version: 20160417231302) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code_sn"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20160412133647) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "subline_id"
+    t.string   "name"
+    t.string   "reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "products", ["subline_id"], name: "index_products_on_subline_id"
 
   create_table "routes", force: :cascade do |t|
     t.string   "name"

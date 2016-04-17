@@ -28,11 +28,20 @@
     description: Faker::Lorem.sentence,
     enable: 'si'
   )
+
+  # Clients
+  client = Client.create(
+    code_sn: Faker::Address.city,
+    name: Faker::Address.city,
+    business_name: Faker::Code.isbn,
+    address: Faker::Address.city,
+    enable: 'si'
+  )
 end
 
 # User
 user = User.create(
   email: 'admin@admin.com',
   encrypted_password: 'admin12345',
-  admin: 't'
+  admin: 'true'
 )
