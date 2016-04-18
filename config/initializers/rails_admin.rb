@@ -1,9 +1,9 @@
 RailsAdmin.config do |config|
 
 # Se valida el usuario que sea un user admin
-config.authorize_with do
-  redirect_to main_app.root_path unless current_user.admin==true
- end
+# config.authorize_with do
+#   redirect_to main_app.root_path unless current_user.admin==true
+#  end
 
  ################  Global configuration  ################
 
