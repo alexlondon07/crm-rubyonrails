@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417231302) do
+ActiveRecord::Schema.define(version: 20160417235542) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "code_sn"
@@ -42,6 +42,25 @@ ActiveRecord::Schema.define(version: 20160417231302) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.integer  "route_id"
+    t.integer  "zone_id"
+    t.string   "code"
+    t.date     "date"
+    t.string   "city"
+    t.text     "observations"
+    t.boolean  "enable"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "orders", ["client_id"], name: "index_orders_on_client_id"
+  add_index "orders", ["route_id"], name: "index_orders_on_route_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+  add_index "orders", ["zone_id"], name: "index_orders_on_zone_id"
 
   create_table "products", force: :cascade do |t|
     t.integer  "subline_id"

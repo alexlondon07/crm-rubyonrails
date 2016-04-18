@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @order.client %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @order.route %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @order.zone %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @order.code %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @order.date %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @order.city %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @order.observations %>
+</p>
+
+<p>
+  <strong>Enable:</strong>
+  <%= @order.enable %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

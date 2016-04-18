@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   # namespace :admin do resources :zones end
 
   namespace :admin do
-    resources :lines
-    resources :clients
-    resources :routes
     resources :zones
+    resources :routes
+    resources :lines
+    resources :sublines
     resources :products
+    resources :clients
+    resources :orders
   end
 
   get 'welcome/index'
